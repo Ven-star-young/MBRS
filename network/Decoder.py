@@ -1,5 +1,31 @@
 from . import *
 
+class Decoder_SelfAttn(nn.Module):
+	'''
+	Decode the encoded image and get message
+	'''
+
+	def __init__(self, H, W, message_length, blocks=4, channels=64):
+		super(Decoder_SelfAttn, self).__init__()
+
+		stride_blocks = int(np.log2(H // int(np.sqrt(message_length))))
+		keep_blocks = max(blocks - stride_blocks, 0)
+
+		self.first_layers = nn.Sequential(
+			ConvBNRelu(3, channels),
+			selfSENet_decoder(channels, channels, blocks=stride_blocks + 1, block_type="selfBottleneckBlock"),
+			ConvBNRelu(channels * (2 ** stride_blocks), channels),
+		)
+		self.keep_layers = selfSENet(channels, channels, blocks=keep_blocks, block_type="selfBottleneckBlock")
+
+		self.final_layer = ConvBNRelu(channels, 1)
+
+	def forward(self, noised_image):
+		x = self.first_layers(noised_image)
+		x = self.keep_layers(x)
+		x = self.final_layer(x)
+		x = x.view(x.shape[0], -1)
+		return x
 
 class Decoder(nn.Module):
 	'''

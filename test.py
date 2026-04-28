@@ -55,7 +55,7 @@ for i, images in enumerate(test_dataloader):
 		psnr = kornia.losses.psnr_loss(encoded_images.detach(), images, 2).item()
 
 		# ssim
-		ssim = 1 - 2 * kornia.losses.ssim(encoded_images.detach(), images, window_size=5, reduction="mean").item()
+		ssim = 1 - 2 * kornia.losses.ssim_loss(encoded_images.detach(), images, window_size=5, reduction="mean").item()
 
 	'''
 	decoded message error rate

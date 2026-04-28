@@ -9,6 +9,7 @@ settings = JsonConfig()
 settings.load_json_file("train_settings.json")
 
 with_diffusion = settings.with_diffusion
+with_self_attention = settings.with_self_attention
 only_decoder = settings.only_decoder
 
 project_name = settings.project_name

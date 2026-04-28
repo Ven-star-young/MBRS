@@ -5,13 +5,16 @@ from .Discriminator import Discriminator
 class Network:
 
 	def __init__(self, H, W, message_length, noise_layers, device, batch_size, lr, with_diffusion=False,
-				 only_decoder=False):
+				 only_decoder=False, with_self_attention=False):
 		# device
 		self.device = device
 
 		# network
 		if not with_diffusion:
-			self.encoder_decoder = EncoderDecoder(H, W, message_length, noise_layers).to(device)
+			if not with_self_attention:
+				self.encoder_decoder = EncoderDecoder(H, W, message_length, noise_layers).to(device)
+			else:
+				self.encoder_decoder = EncoderDecoder_SelfAttn(H, W, message_length, noise_layers).to(device)
 		else:
 			self.encoder_decoder = EncoderDecoder_Diffusion(H, W, message_length, noise_layers).to(device)
 
@@ -95,7 +98,7 @@ class Network:
 			psnr = kornia.losses.psnr_loss(encoded_images.detach(), images, 2)
 
 			# ssim
-			ssim = 1 - 2 * kornia.losses.ssim(encoded_images.detach(), images, window_size=5, reduction="mean")
+			ssim = 1 - 2 * kornia.losses.ssim_loss(encoded_images.detach(), images, window_size=5, reduction="mean")
 
 		'''
 		decoded message error rate
@@ -138,7 +141,7 @@ class Network:
 			psnr = kornia.losses.psnr_loss(encoded_images.detach(), images, 2)
 
 			# ssim
-			ssim = 1 - 2 * kornia.losses.ssim(encoded_images.detach(), images, window_size=5, reduction="mean")
+			ssim = 1 - 2 * kornia.losses.ssim_loss(encoded_images.detach(), images, window_size=5, reduction="mean")
 
 		'''
 		decoded message error rate
@@ -200,7 +203,7 @@ class Network:
 			psnr = kornia.losses.psnr_loss(encoded_images.detach(), images, 2)
 
 			# ssim
-			ssim = 1 - 2 * kornia.losses.ssim(encoded_images.detach(), images, window_size=5, reduction="mean")
+			ssim = 1 - 2 * kornia.losses.ssim_loss(encoded_images.detach(), images, window_size=5, reduction="mean")
 
 		'''
 		decoded message error rate

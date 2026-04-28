@@ -10,6 +10,7 @@ settings = JsonConfig()
 settings.load_json_file(filename)
 
 with_diffusion = settings.with_diffusion
+with_self_attention = settings.with_self_attention
 
 dataset_path = settings.dataset_path
 batch_size = 1
