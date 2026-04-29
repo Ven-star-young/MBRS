@@ -1,0 +1,15 @@
+{
+  "result_folder": "experiment1_baseline_with_crop_50epoch/",
+  "model_epoch": 50,
+  "with_diffusion": false,
+  "with_self_attention": false,
+  "strength_factor": 1,
+  "dataset_path": "datasets/",
+  "H": 128,
+  "W": 128,
+  "message_length": 64,
+  "save_images_number": 4,
+  "noise_layers": [
+    "Combined([JpegMask(50),Crop(0.15,0.15)])"
+  ]
+}

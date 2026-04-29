@@ -1,0 +1,15 @@
+-----------------------Date: 2026/04/28 19:27:35-----------------------
+project_name = MBRS
+with_diffusion = False
+with_self_attention = True
+only_decoder = False
+epoch_number = 52
+batch_size = 32
+train_continue = False
+dataset_path = datasets/
+save_images_number = 4
+H = 128
+W = 128
+message_length = 64
+lr = 0.001
+noise_layers = ['Combined([JpegMask(50),Jpeg(50),Identity()])']
