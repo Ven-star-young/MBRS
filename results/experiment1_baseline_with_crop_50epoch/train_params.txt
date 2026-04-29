@@ -1,0 +1,17 @@
+-----------------------Date: 2026/04/28 12:47:56-----------------------
+project_name = MBRS
+with_diffusion = False
+with_self_attention = False
+only_decoder = False
+epoch_number = 15
+batch_size = 32
+train_continue = True
+train_continue_path = MBRS_m64_Combined([JpegMask(50),Jpeg(50),Identity(),Crop(0.15,0.15)])__2026_04_28__09_58_09/
+train_continue_epoch = 36
+dataset_path = datasets/
+save_images_number = 4
+H = 128
+W = 128
+message_length = 64
+lr = 0.001
+noise_layers = ['Combined([JpegMask(50),Jpeg(50),Identity(),Crop(0.15,0.15)])']

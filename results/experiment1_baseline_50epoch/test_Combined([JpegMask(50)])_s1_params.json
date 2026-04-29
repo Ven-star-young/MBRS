@@ -1,7 +1,7 @@
 {
-  "result_folder": "experiment2_crop_diffusion_50epoch/",
+  "result_folder": "experiment1_baseline_50epoch/",
   "model_epoch": 50,
-  "with_diffusion": true,
+  "with_diffusion": false,
   "with_self_attention": false,
   "strength_factor": 1,
   "dataset_path": "datasets/",
@@ -10,6 +10,6 @@
   "message_length": 64,
   "save_images_number": 4,
   "noise_layers": [
-    "Combined([JpegMask(50),Crop(0.15,0.15)])"
+    "Combined([JpegMask(50)])"
   ]
 }

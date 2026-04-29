@@ -1,6 +1,7 @@
------------------------Date: 2026/04/16 11:06:17-----------------------
+-----------------------Date: 2026/04/28 09:58:09-----------------------
 project_name = MBRS
-with_diffusion = True
+with_diffusion = False
+with_self_attention = False
 only_decoder = False
 epoch_number = 37
 batch_size = 32
