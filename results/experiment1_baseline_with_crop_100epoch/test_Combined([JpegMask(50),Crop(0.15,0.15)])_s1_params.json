@@ -1,7 +1,7 @@
 {
-  "result_folder": "experiment2_crop_diffusion_100epoch/",
+  "result_folder": "experiment1_baseline_with_crop_100epoch/",
   "model_epoch": 100,
-  "with_diffusion": true,
+  "with_diffusion": false,
   "with_self_attention": false,
   "strength_factor": 1,
   "dataset_path": "datasets/",
