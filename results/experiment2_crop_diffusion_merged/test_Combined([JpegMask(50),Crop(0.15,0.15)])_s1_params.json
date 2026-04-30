@@ -1,6 +1,6 @@
 {
-  "result_folder": "experiment2_crop_diffusion_50epoch/",
-  "model_epoch": 50,
+  "result_folder": "experiment2_crop_diffusion_100epoch/",
+  "model_epoch": 100,
   "with_diffusion": true,
   "with_self_attention": false,
   "strength_factor": 1,

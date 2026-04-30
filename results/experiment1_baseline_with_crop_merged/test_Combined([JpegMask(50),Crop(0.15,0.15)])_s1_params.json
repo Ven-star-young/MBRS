@@ -1,6 +1,6 @@
 {
-  "result_folder": "experiment1_baseline_with_crop_50epoch/",
-  "model_epoch": 50,
+  "result_folder": "experiment1_baseline_with_crop_100epoch/",
+  "model_epoch": 100,
   "with_diffusion": false,
   "with_self_attention": false,
   "strength_factor": 1,

@@ -1,9 +1,9 @@
------------------------Date: 2026/04/28 12:47:56-----------------------
+-----------------------Date: 2026/04/29 21:07:53-----------------------
 project_name = MBRS
 with_diffusion = False
 with_self_attention = False
 only_decoder = False
-epoch_number = 52
+epoch_number = 103
 batch_size = 32
 train_continue = False
 dataset_path = datasets/
